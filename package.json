@@ -1,0 +1,21 @@
+{
+  "name": "moex-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "moex",
+    "bond",
+    "invest",
+    "telegram"
+  ],
+  "author": "Mikhail Angelov",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "express": "^4.18.2"
+  }
+}

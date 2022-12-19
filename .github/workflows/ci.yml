@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+    - name: Copy Repo Files
+      uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+     #Docker
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    
+    - name: Publish Docker Image to GPR
+      run: |
+        echo ${{ secrets.GITHUB_TOKEN }}
+        docker -v
+        echo ${{ secrets.GITHUB_TOKEN }} | docker login https://docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
+        docker build . --tag docker.pkg.github.com/mikhail-angelov/moex-bot/moex-bot:latest --cache-from docker.pkg.github.com/mikhail-angelov/moex-bot/moex-bot:latest
+        docker push docker.pkg.github.com/mikhail-angelov/moex-bot/moex-bot:latest
+ 
