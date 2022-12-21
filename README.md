@@ -8,6 +8,9 @@ and wrapped it with Telegram bot
 ## Demo
 you can check it with this deployed bot [@moex-bot](https://t.me/MoexTopBondsBot)
 > no obligations, it can stop working any time
+example:
+![2022-12-21 12 49 37](https://user-images.githubusercontent.com/2368171/208875342-956c1046-d875-4c61-aec7-3a39f0f64765.jpg)
+
 
 ## Tech info
 
